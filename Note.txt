@@ -1,0 +1,9 @@
+If you create a server/part without any error being generated/displayed and 
+no other computer can connect to it then make sure that the YoctoSpace application 
+is allowed to communicate through the Windows Defender Firewall.
+
+To do this, go to "Firewall and network protection" 
+and then "Allow an application via the firewall". 
+Look for the application in the list and if it is disabled then reactivated there. 
+
+To do this procedure you will need administrator access to the machine.

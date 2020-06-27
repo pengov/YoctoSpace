@@ -1,0 +1,87 @@
+BOT protocol
+
+CORRECTION ANGLE
+
+SI abs(vitesse angulaire) top élevé (grand)
+	TOURNER dans le sens opposé
+
+SINON SI abs(delta_angle) trop élevé (grand)
+	TOURNER dans le sens pour corriger la manoeuvre
+	
+SINON SI abs(delta_angle) trop élevé (moyen)
+	SI abs(vitesse angulaire) trop élevé (moyen)
+		TOURNER dans le sens opposé
+	SINON
+		TOURNER dans le sens pour corriger la manoeuvre
+
+SINON SI abs(delta_angle) trop élevé (petit)
+	SI abs(vitesse angulaire) trop élevé (petit)
+		TOURNER dans le sens opposé
+	SINON
+		TOURNER dans le sens pour corriger la manoeuvre
+	
+	
+	
+CORRECTION POSITION
+SI vitesse direct trop élevé (grand)
+	SI angle dans direction vaisseau (grand)
+		AVANCER pour freiner
+	SINON SI angle dans direction opposé vaisseau (grand)
+		RECULER pour freiner
+
+SINON SI delta_pos trop élevé (grand)
+	SI abs(delta_angle) MOINS que limite (grand)
+		AVANCER
+	
+	SINON SI abs(delta_angle) PLUS que limite (grand)
+		RECULER
+		
+SINON SI delta_pos trop élevé (moyen)
+	SI vitesse direct trop élevé (moyen)
+		SI angle dans direction vaisseau (moyen)
+			AVANCER pour freiner
+		SINON SI angle dans direction opposé vaisseau (moyen)
+			RECULER pour freiner
+			
+	SINON SI abs(delta_angle) MOINS que limite (moyen)
+		AVANCER
+	
+	SINON SI abs(delta_angle) PLUS que limite (moyen)
+		RECULER
+		
+SINON SI delta_pos trop élevé (petit)
+	SI vitesse direct trop élevé (petit)
+		SI angle dans direction vaisseau (petit)
+			AVANCER pour freiner
+		SINON SI angle dans direction opposé vaisseau (petit)
+			RECULER pour freiner
+			
+	SINON SI abs(delta_angle) MOINS que limite (petit)
+		AVANCER
+	
+	SINON SI abs(delta_angle) PLUS que limite (petit)
+		RECULER
+		
+SINON SI delta_pos trop petit (petit)
+	SINON SI abs(delta_angle) MOINS que limite (petit)
+		RECULER
+	
+	SINON SI abs(delta_angle) PLUS que limite (petit)
+		AVANCER
+		
+		
+		
+TIR
+
+SI delta_angle suffisament petit
+	TIRER avec CANNON
+SINON
+	STOP TIRER avec CANNON
+	
+SI delta_pos suffisament petit
+	TIRER avec TURRET
+SINON
+	STOP TIRER avec TURRET
+	
+SI delta_angle suffisament petit
+	TIRER avec TORPEDO LAUNCH
