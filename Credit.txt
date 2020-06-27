@@ -6,7 +6,7 @@
 idea:		Nicolas Pengov
 game design: 	Nicolas Pengov
 developement:	Nicolas Pengov
-image:		Nicolas Pengov with the help of Scezaquer (thx fy friend)
-music:		Gugustinette
+image:		Nicolas Pengov with the little help of Aurélien Buck-Kaeffer (thx my friend)
+music:		Sorry no music :(
 sfx:		Nicolas Pengov
 
